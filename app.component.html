@@ -1,0 +1,194 @@
+<app-home></app-home>
+<router-outlet></router-outlet>
+  <!-- <br>
+  <button (click)="calculate($event)" type="button" class="btn btn-success">calculate it </button><br><br>
+  <hr>
+  <br>
+  <button (click)="AddPayee()" type="button" class="btn btn-success">add  </button><br><br>
+  <hr>
+  <br>
+  <button (click)="DelPayee()" type="button" class="btn btn-success">del </button><br><br>
+  <hr>
+  <br>
+  <button (click)="ViewPayee()" type="button" class="btn btn-success">view </button><br><br>
+  <hr>
+  <br>
+  <button (click)="Check()" type="button" class="btn btn-success">Check</button><br><br>
+  <hr>
+  <br>
+  
+
+  <app-add-payee></app-add-payee>
+  <app-delete-payee></app-delete-payee>
+  <app-view-all-payees></app-view-all-payees>
+  <app-view-payee></app-view-payee>
+
+  <app-custom-statement></app-custom-statement>
+  <app-yearly-statement></app-yearly-statement>
+  <app-monthly-statement></app-monthly-statement>
+ -->
+
+
+
+  <!-- <app-login></app-login>
+  <hr>
+  <hr>
+  <app-forgot-password></app-forgot-password>  
+  <hr>
+  <hr>
+  <app-reset-password></app-reset-password>
+  <hr>
+  <hr>
+  <app-register></app-register> -->
+
+  <!-- <span>{{ title|uppercase }} app is running!
+    <br>
+
+    {{album|uppercase}} features super future and jeffrey !
+  </span>
+
+  <br>
+  <br>
+  <hr>
+  date pipe
+  <p>Account opening date is :{{accDate}}</p>
+  <p>Account opening date is :{{accDate | date:'h:mm'}}</p>
+  <p>Account opening date is :{{accDate | date:'shortDate'}}</p>
+  <p>Account opening date is :{{accDate | date:'h:mm a'}}</p>
+  <p>Account opening date is :{{accDate | date}}</p>
+  <p>Account opening date is :{{accDate | date :'full'}}</p>
+  <br>
+  <br>
+  <hr>
+
+  developer defined pipes by creating their template file using ng generate command
+  <h3>Square root of {{z}} is {{z | sqrt}}</h3>
+  <br>
+  <h3>Cube  of {{z}} is {{z | cube}}</h3>
+  <br>
+  <hr>
+
+  currency pipe
+  default is usd
+  <p>{{a| currency}}</p>
+  <p>{{a | currency:"INR"}}</p>
+  <p>{{a | currency:"EUR"}}</p>
+  <p>{{a| currency}}</p>
+  
+  <hr>
+
+  image section
+  <img src="assets/images/astro.jpg">
+  <br>
+  <img src={{imageURL}}><br>
+  <img [src]="imageURL">
+  <br>
+  <br>
+  <hr>
+
+
+  dropdown menu with for loop
+  <select name="" id="">
+    <option *ngFor="let city of cities">{{ city.city }}</option>
+  </select>
+  <br>
+  <br>
+  <hr>
+
+  data binding 
+  <h1>Data Binding </h1>
+  <br>
+  <h3>num value is {{num}}</h3>
+  <br>
+
+  one way binding
+  <label for="">One way Binding</label><input type="number" value={{num}}>
+  <br>
+  <br>
+
+  two way binding in angular by adding FormsModule in app.module
+  <label for="">Two way Binding</label><input type="number" [(ngModel)]="num">
+  <br>
+  <br>
+  <hr>
+
+  simple interest calculator using two way binding
+  <h1>Simple interest is {{(principalAmount*interest*years)/100}}</h1>
+  <br>
+  <label for="">principal amount</label><input type="number" [(ngModel)]="principalAmount"><br>
+  <label for="">rate opf interest</label><input type="number" [(ngModel)]="interest"><br>
+  <label for="">number of years</label><input type="number" [(ngModel)]="years"><br>
+  <br>
+  <hr>
+
+
+  event binding 
+  <button (click)="calculate($event)" type="button" class="btn btn-success">calculate it </button><br><br>
+  <h1>Simple interest is {{simpleInterest}} </h1>
+  <br>
+  <hr>
+
+
+  toggle button thingy 
+  <button (click)="showThis = !showThis" type="button" class="btn btn-success">
+    {{showThis?'Dont Show':'Show'}}
+  </button>
+  <br>
+  <br>
+  <hr>
+  conditionals in  angular
+  <div *ngIf="canDialISD; else myElseBlock">Yes I can dial ISD</div>
+  <ng-template #myElseBlock>No I cannot dial ISD</ng-template>
+
+  <br>
+  <br>
+
+  <div *ngIf="num>10; else notEqual">greater than ten</div>
+  <ng-template #notEqual>less than 10</ng-template>
+
+  <br>
+  <br>
+  <hr>
+  tables in html 
+   <table cellspacing="20" border="2">
+
+<tr>
+  <td>Account Number</td><td>{{savObj1.accountNumber}}</td>
+  <td>Account Holder </td><td>{{savObj1.accountHolder}}</td>
+  <td>Account Balance </td><td>{{savObj1.accountBalance}}</td>
+</tr>
+<tr>
+  <td>Account Number</td><td>{{savObj2.accountNumber}}</td>
+  <td>Account Holder </td><td>{{savObj2.accountHolder}}</td>
+  <td>Account Balance </td><td>{{savObj2.accountBalance}}</td>
+</tr>
+<tr>
+  <td>Account Number</td><td>{{savObj3.accountNumber}}</td>
+  <td>Account Holder </td><td>{{savObj3.accountHolder}}</td>
+  <td>Account Balance </td><td>{{savObj3.accountBalance}}</td>
+</tr>
+</table> 
+
+
+  table with for loop
+ 
+  <table border="5" cellpadding="5">
+    <tr>
+      <th>Account Number</th>
+      <th>Account Holder</th>
+      <th>Account Balance</th>
+      <th colspan="5" align="center">Address</th>
+    </tr>
+    vari is just like an iterator in line below 
+    <tr *ngFor="let vari of savArr">
+      <td>{{vari.accountNumber}}</td>
+      <td>{{vari.accountHolder}}</td>
+      <td>{{vari.accountBalance}}</td>
+      <td>{{vari.addr.area}}</td>
+      <td>{{vari.addr.street}}</td>
+      <td>{{vari.addr.city}}</td>
+      <td>{{vari.addr.pincode}}</td>
+      <td>{{vari.addr.state}}</td>
+    </tr>
+  </table>
+  <hr> -->
